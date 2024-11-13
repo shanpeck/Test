@@ -1,0 +1,15 @@
+name: "CodeQL Analysis" on:
+push: branches:
+- main # Runs the analysis when changes are pushed to the main branch pull_request:
+branches:
+- main # Runs the analysis when a PR is opened to the main branch
+jobs: analyze:
+name: Analyze code with CodeQL runs-on: ubuntu-latest
+steps:
+- name: Checkout repository uses: actions/checkout@v3
+- name: Set up CodeQL
+uses: github/codeql-action/setup-codeql@v2
+- name: Run CodeQL Analysis
+uses: github/codeql-action/analyze@v2 with:
+categories: 'security'
+# Can be 'security' or 'security-and-quality' depending on the type of scan you need
