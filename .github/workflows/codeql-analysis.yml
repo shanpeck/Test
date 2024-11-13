@@ -16,8 +16,8 @@ jobs:
       - name: Checkout repository 
         uses: actions/checkout@v3
       - name: Set up CodeQL
-        uses: github/codeql-action/setup-codeql@v2
+        uses: github/codeql-action/setup-codeql@v1
       - name: Run CodeQL Analysis
-        uses: github/codeql-action/analyze@v2 
+        uses: github/codeql-action/analyze@v1
         with:
           categories: 'security' # Can be 'security' or 'security-and-quality' depending on the type of scan you nee
